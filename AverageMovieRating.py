@@ -2,6 +2,7 @@ from mrjob.job import MRJob
 import numpy
 
 class AverageMovieRating(MRJob):
+    #taming-big-data-with-mapreduce-and-hadoop
     def mapper(self,key,line):
         (userID,movieID,rating,timestamp)=line.split('\t')
         yield movieID,float(rating) #to reduce movieid by rating to compute average
